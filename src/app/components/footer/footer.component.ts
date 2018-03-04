@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DatainfoService } from '../../services/datainfo.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 export class FooterComponent {
   anio:number = new Date().getFullYear();
 
-  constructor() { }
+  constructor(public _is:DatainfoService) {
+    
+  }
 
 }
