@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 // Importamos rutas
 import { app_routing } from "./app.routes";
+
+// servicios
+import { DatainfoService } from './services/datainfo.service';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -24,9 +28,12 @@ import { PortfolioitemComponent } from './components/portfolioitem/portfolioitem
   ],
   imports: [
     BrowserModule,
+    HttpModule, // conexiones http
     app_routing // importante declarar aqui
   ],
-  providers: [],
+  providers: [
+    DatainfoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
