@@ -25,7 +25,7 @@ export class DatainfoService {
 
   public cargaequipo() {
     this.http.get("https://miportafolio-88ca3.firebaseio.com/equipo.json").subscribe(data => {
-      console.log(data.json());
+      //console.log(data.json());
       this.dequipo = data.json();
       this.dquipook = true;
     });
