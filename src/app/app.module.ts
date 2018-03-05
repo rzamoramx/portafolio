@@ -7,6 +7,7 @@ import { app_routing } from "./app.routes";
 
 // servicios
 import { DatainfoService } from './services/datainfo.service';
+import { PortfolioService } from './services/portfolio.service';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -32,7 +33,8 @@ import { PortfolioitemComponent } from './components/portfolioitem/portfolioitem
     app_routing // importante declarar aqui
   ],
   providers: [
-    DatainfoService
+    DatainfoService,
+    PortfolioService
   ],
   bootstrap: [AppComponent]
 })
