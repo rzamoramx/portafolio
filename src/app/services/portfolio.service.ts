@@ -4,19 +4,23 @@ import { Http } from '@angular/http';
 @Injectable()
 export class PortfolioService {
 
-  portfolio:any[] = [];
+  portfolios:any[] = [];
   cargandoPortfolio:boolean = false;
 
   constructor(private http:Http ) {
     this.cargaPortfolio();
   }
 
-  private cargaPortfolio() {
+  public cargaPortfolio() {
     this.cargandoPortfolio = true;
-    if (this.portfolio.length===0) {
+
+    if (this.portfolios.length===0) {
       this.http.get("https://miportafolio-88ca3.firebaseio.com/portfolioidx.json").subscribe(res => {
-        console.log(res.json());
-        this.cargandoPortfolio = false;
+        console.log( res.json() );
+        setTimeout(() => {
+          this.cargandoPortfolio = false;
+          this.portfolios = res.json();
+        }, 1000);
       });
     }
   }
