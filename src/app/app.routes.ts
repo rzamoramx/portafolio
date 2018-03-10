@@ -13,7 +13,7 @@ import {
 const app_routes: Routes = [
     { path: 'home', component:PortafolioComponent }, // -> 1
     { path: 'about', component:AboutComponent },
-    { path: 'item', component:PortfolioitemComponent },
+    { path: 'item/:id', component:PortfolioitemComponent },
     { path: '**', pathMatch: 'full', redirectTo:'home' } // esto indica que si no se a especificado ninguna ruta redirija a raiz '' -> 1
 ];
 
