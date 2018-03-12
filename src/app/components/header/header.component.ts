@@ -17,7 +17,7 @@ export class HeaderComponent {
   // busqueda 
   public searchItem(item:string) 
   {
-    console.log(item);
+    //console.log("item: "+item);
     this.router.navigate(['search', item]);
   }
 
