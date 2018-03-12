@@ -25,14 +25,18 @@
         </li>
         
       </ul>
-      <form class="rk-search">
-        <input type="text" placeholder="Buscar" id="urku-search" class="rk-search-field">
+      <div form class="rk-search">
+        <!-- al oprimir enter se manda a searchItem definido en header.component.js -->
+        <input name="search" 
+          (keyup.enter)="searchItem( searchKey.value )"
+          #searchKey
+          type="text" placeholder="Buscar" id="urku-search" class="rk-search-field" />
         <label for="urku-search">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-search"></use>
           </svg>
         </label>
-      </form>
+      </div>
     </nav>
   </div>
 </header>

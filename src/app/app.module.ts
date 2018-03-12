@@ -7,6 +7,7 @@ import { app_routing } from "./app.routes";
 
 // servicios
 import { DatainfoService } from './services/datainfo.service';
+import { PortfolioService } from './services/portfolio.service';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PortafolioComponent } from './components/portafolio/portafolio.component';
 import { AboutComponent } from './components/about/about.component';
 import { PortfolioitemComponent } from './components/portfolioitem/portfolioitem.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { PortfolioitemComponent } from './components/portfolioitem/portfolioitem
     FooterComponent,
     PortafolioComponent,
     AboutComponent,
-    PortfolioitemComponent
+    PortfolioitemComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { PortfolioitemComponent } from './components/portfolioitem/portfolioitem
     app_routing // importante declarar aqui
   ],
   providers: [
-    DatainfoService
+    DatainfoService,
+    PortfolioService
   ],
   bootstrap: [AppComponent]
 })

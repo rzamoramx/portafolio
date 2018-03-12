@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-portafolio',
   templateUrl: './portafolio.component.html',
   styles: []
 })
-export class PortafolioComponent implements OnInit {
+export class PortafolioComponent {
 
-  constructor() { }
+  constructor(public _ps:PortfolioService) {
 
-  ngOnInit() {
-  }
+   }
 
 }
