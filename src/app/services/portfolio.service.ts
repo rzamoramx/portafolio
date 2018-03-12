@@ -11,7 +11,19 @@ export class PortfolioService {
     this.cargaPortfolio();
   }
 
-  public cargaPortfolio() {
+  /** 
+   * Carga detalle de item, portafolio seleccionado
+   */
+  public cargaItem(cod:string)
+  {
+    return this.http.get(`https://miportafolio-88ca3.firebaseio.com/portfolio/${ cod }.json`);
+  }
+
+  /**
+   * Lista todos los portafolios, desde firebase
+   */
+  public cargaPortfolio() 
+  {
     this.cargandoPortfolio = true;
 
     if (this.portfolios.length===0) {
