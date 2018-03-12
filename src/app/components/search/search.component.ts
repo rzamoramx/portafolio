@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'; // requerido para obtener parametros por url
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-search',
@@ -7,6 +9,18 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
 
-  constructor() { }
+  serachK:string = undefined;
+
+  // inyecta dependencias
+  constructor(private route:ActivatedRoute,
+              private _ps:PortfolioService) 
+  {
+    // obtiene el parametro de url
+    route.params.subscribe(parametro => {
+      this.serachK = parametro['searchK'];
+      //console.log(this.serachK);
+      _ps.searchItem(this.serachK);
+    });
+  }
 
 }
