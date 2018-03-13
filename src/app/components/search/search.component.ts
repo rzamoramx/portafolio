@@ -13,7 +13,7 @@ export class SearchComponent {
 
   // inyecta dependencias
   constructor(private route:ActivatedRoute,
-              private _ps:PortfolioService) 
+              public _ps:PortfolioService) 
   {
     // obtiene el parametro de url
     route.params.subscribe(parametro => {
